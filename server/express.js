@@ -5,7 +5,7 @@ import compress from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import Template from "../template.js";
-import userRoutes from './routes/user.routes.js';
+import productRoutes from './routes/product.routes.js';
 
 const app = express();
 
@@ -13,12 +13,13 @@ app.get("/", (req, res) => {
   res.status(200).send(Template());
 });
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', userRoutes)
+app.use('/', productRoutes)
 
 app.use(cookieParser());
 app.use(compress());

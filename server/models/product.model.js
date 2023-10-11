@@ -1,33 +1,31 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
     required: "Name is required",
   },
-  email: {
+  description: {
     type: String,
     trim: true,
-    unique: "Email already exists",
-    match: [/.+\@.+\..+/, "Please fill a valid email address"],
-    required: "Email is required",
+    required: "Description is required",
   },
-  created: {
-    type: Date,
-    default: Date.now,
+  price: {
+    type: Number,
+    required: "Price is required"
   },
-  updated: {
-    type: Date,
-    default: Date.now,
+  quantity: {
+    type: Number,
+    required: "Quantity is required"
   },
-  hashed_password: {
+  category: {
     type: String,
-    required: "Password is required",
+    required: "Category is required",
   },
-  salt: String,
+  //salt: String,
 });
-
+/*
 UserSchema.virtual("password")
   .set(function (password) {
     this._password = password;
@@ -46,5 +44,5 @@ UserSchema.path("hashed_password").validate(function (v) {
     this.invalidate("password", "Password is required");
   }
 }, null);
-
-export default mongoose.model("User", UserSchema);
+*/
+export default mongoose.model("product", ProductSchema);

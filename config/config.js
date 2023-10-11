@@ -3,7 +3,7 @@ const config = {
   port: process.env.PORT || 3000,
   jwtSecret: process.env.JWT_SECRET || "YOUR_secret_key",
   mongoUri:
-    process.env.MONGODB_URI || "mongodb+srv://jhutch24:oD905wE9wqhoAe9S@mycluster.krxzxt4.mongodb.net/user_db?retryWrites=true&w=majority" || 
+    process.env.MONGODB_URI || "mongodb+srv://jhutch24:oD905wE9wqhoAe9S@mycluster.krxzxt4.mongodb.net/Marketplace?retryWrites=true&w=majority" || 
     process.env.MONGO_HOST ||
     "mongodb://" +
       (process.env.IP || "localhost") +

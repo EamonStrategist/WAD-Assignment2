@@ -18,7 +18,7 @@ mongoose.connection.on("error", (error) => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to User application." });
+  res.json({ message: "Welcome to DressStore application" });
 });
 
 app.listen(config.port, (err) => {
